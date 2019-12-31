@@ -7,41 +7,28 @@
  */
 
 /**
- * 二分查找算法
- * 从有序的序列中查找一个特定元素
- * @param array $arr 有序的数组
- * @param $search
- * @param int $start
- * @param int $end
+ * @param array $list
+ * @param int $item
  * @return int|null
  */
-function binary_search(array $arr, $search, int $start, int $end)
-{
+function binary_search(array $list, int $item):?int {
 
-    $mid = (int)floor(($start + $end) / 2);
-
-    if(!isset($arr[$mid]) || $start > $end)
-    {
-        return null;
+    $start = 0;
+    $end = count($list) - 1;
+    while ($start <= $end) {
+        $mid = (int)(($start + $end) / 2);
+        if ($list[$mid] < $item) {
+            $start = $mid + 1;
+        } elseif ($list[$mid] > $item) {
+            $end = $mid - 1;
+        } else {
+            return $mid;
+        }
     }
-
-    if($arr[$mid] === $search)
-    {
-        return $mid;
-    }
-    elseif ($arr[$mid] < $search)
-    {
-        $start = $mid + 1;
-    }
-    else
-    {
-        $end = $mid - 1;
-    }
-
-    return binary_search($arr, $search, $start, $end);
+    return null;
 }
 
-$max = 495;
+$max = 414345;
 $arr = range(1, $max);
-$ret = binary_search(array_values($arr), 11, 1, $max);
+$ret = binary_search(array_values($arr), 213);
 var_dump($ret);

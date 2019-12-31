@@ -11,7 +11,7 @@
  * @param array $arr
  * @return array
  */
-function quick_sort(array $arr):array
+/*function quick_sort(array $arr):array
 {
     $len = \count($arr);
 
@@ -40,5 +40,24 @@ function quick_sort(array $arr):array
     }
 
     return array_merge(quick_sort($left), [$mid_val], quick_sort($right));
+}*/
+
+function quickSort(&$list) {
+    if (count($list) < 2) {
+        return $list;
+    }
+
+    $start = 0;
+    $end = count($list) - 1;
+    $pivot = $list[0];
+
+    for ($i=1; $start < $end; ) {
+        if ($list[$i] < $pivot) {
+
+        }
+    }
 }
+
+//function swap ()
+
 

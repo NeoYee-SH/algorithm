@@ -18,7 +18,7 @@ ini_set('memory_limit', '2048M');
 function quick_sort(array $arr):array {
     $len = \count($arr);
     if($len <= 1) return $arr;
-    $mid_key = mt_rand(0, $len-1);
+    $mid_key = random_int(0, $len-1);
     $mid_val = $arr[$mid_key];//随机取一个元素作为基准
     $left = $right = [];
     for($i=0; $i<$len; $i++) {
