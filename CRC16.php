@@ -7,6 +7,7 @@
  */
 
 /**
+ *
  * @param string $str
  * @return int
  */
